@@ -11,6 +11,8 @@
     - make config for grafana {{ grafana_root_path }}
 
 
+- name: install npm
+  apt: name=npm update_cache=yes state=installed
 - name: install npm modules {{ grafana_root_path }}
   command: chdir={{ grafana_root_path }} npm install
 - name: install grunt-cli {{ grafana_root_path }}
